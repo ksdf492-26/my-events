@@ -4,6 +4,9 @@ function index () {
     return (
         <>
         <Header/>
+        <main className='w-screen h-screen'>
+        TELA PRINCIPAL
+        </main>
         <Footer/>
         </>
     )
