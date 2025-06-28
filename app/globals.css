@@ -26,6 +26,6 @@ body {
   overflow: hidden;
   overflow-y: scroll;
 }
-body::-webkit-scrollbar{
+::-webkit-scrollbar{
   display:none
 }

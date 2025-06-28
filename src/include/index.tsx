@@ -1,13 +1,16 @@
 import Header from '@/include/Header'
 import Footer from '@/include/Footer'
+import Banner from '@/pages/Banner'
+import ListerEvents from '@/pages/ListerEvents'
+import Category from '@/pages/Category'
 function index () {
     return (
         <>
-        <Header/>
-        <main className='w-screen h-screen'>
-        TELA PRINCIPAL
-        </main>
-        <Footer/>
+        <main className='w-screen'>
+            <Banner/>  
+            <ListerEvents/>
+            <Category/>
+        </main> 
         </>
     )
 }
