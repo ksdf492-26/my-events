@@ -1,3 +1,4 @@
+'use client'
 import { FaSearch } from "react-icons/fa";
 import CardsEvents from '@/components/CardsEvents'
 import Data from '@/data/Cards'
@@ -18,7 +19,7 @@ function index() {
                         <div className="text-3xl">
                             Olá, faça seu login!
                         </div>
-                        <div className="text-lg">
+                        <div className="text-lg text-gray-400">
                             {dateLatest}
                         </div>
                     </div>

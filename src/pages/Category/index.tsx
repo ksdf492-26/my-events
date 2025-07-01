@@ -1,7 +1,9 @@
+'use client'
 import Category from '@/data/Category'
 import Cards from '@/data/Cards'
-import Card from '@/components/CardsEvents'
+import Card from '@/components/ListerCards'
 import NewCards from '@/components/NewCards'
+import BeComeProducer from '@/pages/BeComeProducer'
 function index() {
     return (
         <section className="container">
@@ -14,10 +16,10 @@ function index() {
                         {
                             Category.map(category => (
                                 <div key={category.name} className=" cursor-pointer h-[200px] flex flex-col justify-center items-center">
-                                    <div className="bg-[#045174] rounded-full w-[140px] h-[140px] flex items-center justify-center">
-                                        <img src={category.url} alt="" />
+                                    <div className="bg-[#045174] rounded-full w-[110px] h-[110px] flex items-center justify-center">
+                                        <img className='' src={category.url} alt="" />
                                     </div>
-                                    <div className="text-xl font-medium">
+                                    <div className="text-lg font-medium">
                                         {category.name}
                                     </div>
                                 </div>
@@ -27,32 +29,13 @@ function index() {
                     </div>
 
                 </div>
-                <div className='w-full bg-sky-950 rounded-4xl flex items-center justify-between'>
-                    <div>
-                        <img src="./mineBanner.png" alt="" />
-                    </div>
-                    <div>
-                        <div className='font-bold text-4xl'>
-                            É um produtor de eventos?
-                        </div>
-                        <div className='text-gray-500 font-medium'>
-                            crie seus eventos conosco e veja seus eventos bonbando!
-                        </div>
-                    </div>
-                    <div className='p-5 rounded-2xl font-medium text-2xl m-10 bg-[#001F3D] cursor-pointer'>
-                        sou produtor
-                    </div>
+                {'aqui'}
+               <BeComeProducer Producter={1} />
+                <div className='flex flex-col w-screen p-5 h-[350px]'>
+                       <Card Cards={Cards} title='Eventos mais vistos nas ultimas 24 horas' />
                 </div>
-                <div className='w-full'>
-                    <div className='text-2xl font-medium mb-5 flex items-center'>
-                        Eventos mais vistos nas ultimas 24 horas
-                    </div>
-                    <div className='flex overflow-y-scroll h-[350px] w-full gap-10'>
-                        <Card cards={Cards} />
-                    </div>
-                </div>
-                <div className='w-full '>
-                    <div className='text-2xl font-medium mb-5 flex items-center'>
+                <div className='w-full flex flex-col '>
+                    <div className='text-2xl w-[96%] capitalize self-center font-medium mb-5 flex items-center'>
                         em destaques na semana
                     </div>
                     <div className="w-full flex items-center gap-6 overflow-x-auto px-4 py-6">
