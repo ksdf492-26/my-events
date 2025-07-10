@@ -49,22 +49,24 @@ function index({ Producter }: Producer) {
                 <section className="container">
                     <div className="flex items-center m-20 bg-sky-950 justify-between rounded-[47px]">
                         <div>
-                            <div className="flex flex-col p-10"> 
+                            <div className="flex flex-col p-10">
                                 <div className="font-bold text-4xl line-clamp-4 w-[250px] mb-1">
                                     Promova eventos
                                     de forma
-                                          <span className="ml-2 text-[#001020] "> 
-                                    rápida
+                                    <span className="ml-2 text-[#001020] ">
+                                        rápida
                                     </span>
                                     <br />
                                     Na HepHere
                                 </div>
                                 <div
                                     className="font-medium text-xl w-[500px] text-gray-500
-             line-clamp-2 overflow-hidden">
+             line-clamp-2 overflow-hidden mb-10">
                                     Crie ou entre com a sua conta de produtor de eventos e veja só os benefícios de anunciar conosco!
                                 </div>
-
+                                <div className="bg-[#045174] cursor-pointer p-2 w-48 text-center font-medium uppercase rounded-lg">
+                                    Quero anunciar
+                                </div>
                             </div>
                         </div>
                         <div>
@@ -77,4 +79,4 @@ function index({ Producter }: Producer) {
     )
 }
 
-export default index
+export default index 

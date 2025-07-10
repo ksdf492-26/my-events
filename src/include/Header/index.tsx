@@ -1,12 +1,15 @@
+import Link from 'next/link';
 import { FaMapMarked, FaMapMarkedAlt, FaMapMarker, FaUser } from 'react-icons/fa'; // Fa = Font Awesome
 
 function index () {
     return (
-        <header className="flex items-center justify-center bg-[#05182B] p-2">
+        <header className="flex items-center justify-center bg-[#05182B] p-1">
             <section className="container">
                 <nav className='flex items-center justify-between'>
                     <div>
-                        <img src="./logo.png" alt="logo do site" className='w-16'/>
+                        <Link href={'/'}>
+                        <img src="/logo.png" alt="logo do site" className='w-16'/>
+                        </Link>
                     </div>
                     <ul className='flex items-center gap-10'>
                         <li className='flex items-baseline gap-1'>
@@ -16,9 +19,12 @@ function index () {
                         <li className='underline'>
                             Anuncie aqui!
                         </li>
-                        <li className='cursor-pointer flex items-baseline gap-1 bg-[#001F3D] p-1 rounded-lg shadow-lg'>
-                            <FaUser/>
-                            Perfil
+                        <li className='cursor-pointer gap-1 bg-[#001F3D] rounded-lg shadow-lg'>
+                            <Link href={'/login'} className='flex items-baseline gap-1 p-1 shadow-lg'>
+                                <FaUser/>
+                            Perfil  
+                            </Link>
+                      
                         </li>
                     </ul>
                 </nav>

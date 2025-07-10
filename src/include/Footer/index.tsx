@@ -9,7 +9,7 @@ function index() {
                 <nav>
                     <div className="flex items-center justify-between mb-10">
                         <div>
-                            <img src="./logo.png" className="w-16" alt="" />
+                            <img src="/logo.png" className="w-16" alt="" />
                         </div>
                         <ul className="flex items-center gap-5">
                             <li className="text-2xl font-medium ">

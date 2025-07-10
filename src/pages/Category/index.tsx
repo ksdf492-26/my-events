@@ -15,9 +15,9 @@ function index() {
                     <div className='flex items-center justify-between w-full'>
                         {
                             Category.map(category => (
-                                <div key={category.name} className=" cursor-pointer h-[200px] flex flex-col justify-center items-center">
-                                    <div className="bg-[#045174] rounded-full w-[110px] h-[110px] flex items-center justify-center">
-                                        <img className='' src={category.url} alt="" />
+                                <div key={category.name} className=" cursor-pointer relative h-[150px] flex flex-col justify-end items-center">
+                                    <div className="bg-[#045174] rounded-full absolute top-0 w-[110px] h-[110px] flex items-center justify-center transition-all hover:w-[120px] hover:h-[120px]">
+                                        <img className='w-[80px] h-[80px]' src={category.url} alt="" />
                                     </div>
                                     <div className="text-lg font-medium">
                                         {category.name}
@@ -29,7 +29,7 @@ function index() {
                     </div>
 
                 </div>
-                {'aqui'}
+                
                <BeComeProducer Producter={1} />
                 <div className='flex flex-col w-screen p-5 h-[350px]'>
                        <Card Cards={Cards} title='Eventos mais vistos nas ultimas 24 horas' />

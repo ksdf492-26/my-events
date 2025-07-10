@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "My Events",
   description: "Site de eventos",
     icons: {
-    icon: "./logo.png", 
+    icon: "/logo.png", 
   },
 };
 
@@ -26,16 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-       
-      >
-        
+    <html lang="pt-BR">
+      <body>
         {children}
-       
       </body>
     </html>
   );
 }
-
-
