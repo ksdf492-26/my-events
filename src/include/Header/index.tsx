@@ -20,7 +20,7 @@ function index () {
                             Anuncie aqui!
                         </li>
                         <li className='cursor-pointer gap-1 bg-[#001F3D] rounded-lg shadow-lg'>
-                            <Link href={'/login'} className='flex items-baseline text-white gap-1 p-1 shadow-lg'>
+                            <Link href={'/login'} className='flex !no-underline items-baseline text-white gap-1 p-1 shadow-lg'>
                                 <FaUser/>
                             Perfil  
                             </Link>
