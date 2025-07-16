@@ -5,7 +5,7 @@ function index () {
     return (
         <header className="flex items-center justify-center bg-[#05182B] p-1">
             <section className="container">
-                <nav className='flex items-center justify-between'>
+                <nav className='flex items-center justify-between text-white'>
                     <div>
                         <Link href={'/'}>
                         <img src="/logo.png" alt="logo do site" className='w-16'/>
@@ -20,7 +20,7 @@ function index () {
                             Anuncie aqui!
                         </li>
                         <li className='cursor-pointer gap-1 bg-[#001F3D] rounded-lg shadow-lg'>
-                            <Link href={'/login'} className='flex items-baseline gap-1 p-1 shadow-lg'>
+                            <Link href={'/login'} className='flex items-baseline text-white gap-1 p-1 shadow-lg'>
                                 <FaUser/>
                             Perfil  
                             </Link>

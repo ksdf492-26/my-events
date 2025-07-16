@@ -12,8 +12,9 @@ function index() {
     });
 
     return (
-        <section className="container">
-            <div className="bg-[url('/backgrounds/Img-02.png')] bg-cyan-950  w-screen flex items-center justify-between p-15">
+        <div className="bg-[url('/backgrounds/Img-02.png')] bg-cyan-950 "> 
+  <section className="container">
+            <div className=" w-full flex items-center justify-between p-15">
                 <div className="flex flex-col gap-5">
                     <div>
                         <div className="text-3xl">
@@ -38,6 +39,8 @@ function index() {
             </div>
 
         </section>
+        </div>
+      
     )
 }
 

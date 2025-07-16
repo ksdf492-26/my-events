@@ -6,8 +6,9 @@ import NewCards from '@/components/NewCards'
 import BeComeProducer from '@/pages/BeComeProducer'
 function index() {
     return (
-        <section className="container">
-            <div className="w-screen flex flex-col items-center p-10 bg-[#001F3D] gap-10">
+        <div className='bg-[#001F3D] w-screen'>
+<section className="container">
+            <div className="w-full flex flex-col items-center p-10 gap-10">
                 <div className=' w-full'>
                     <div className="font-medium text-2xl mb-10 ">
                         As melhores categorias
@@ -31,7 +32,7 @@ function index() {
                 </div>
                 
                <BeComeProducer Producter={1} />
-                <div className='flex flex-col w-screen p-5 h-[350px]'>
+                <div className='flex flex-col w-full p-5 h-[350px]'>
                        <Card Cards={Cards} title='Eventos mais vistos nas ultimas 24 horas' />
                 </div>
                 <div className='w-full flex flex-col '>
@@ -66,6 +67,8 @@ function index() {
                 </div>
             </div>
         </section>
+        </div>
+        
     )
 }
 

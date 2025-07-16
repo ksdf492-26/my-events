@@ -31,7 +31,7 @@ function Index({ title, Cards }: ListerCards) {
           ref={scrollRef}
           className='flex overflow-x-auto scroll-smooth h-[350px] w-full gap-5 px-2'
         >
-          <Card cards={Cards} />
+          <Card cards={Cards}/>
         </div>
 
         <button onClick={() => scroll('right')}>

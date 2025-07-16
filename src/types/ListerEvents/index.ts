@@ -2,6 +2,7 @@ export type ListerEvents = {
   CardOne: {
     title: string
     data: {
+      id:number
       name: string
       url: string
       distance: string
@@ -10,6 +11,7 @@ export type ListerEvents = {
   CardTwo: {
     title: string
     data: {
+      id:number
       name: string
       url: string
       distance: string
@@ -18,6 +20,7 @@ export type ListerEvents = {
   CardThree?: {
     title: string
     data: {
+      id:number
       name: string
       url: string
       distance: string

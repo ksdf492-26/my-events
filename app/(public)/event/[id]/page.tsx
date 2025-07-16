@@ -18,7 +18,7 @@ export default function ProdutoPage() {
     events.map(({ saleEnds, name, distance, id, price,description, url }) => (
 
       <main key={id}>
-        <section className='container'>
+        <section className=''>
           <div className='p-5 flex justify-between items-start'>
             <div>
               <img className='w-[880px] rounded-xl h-[400px]' src={url} alt="" />
