@@ -1,22 +1,22 @@
 import { DetailsEventPanel } from "@/types/DetailsEventPanel";
 import { FaMobileAlt, FaShoppingCart } from "react-icons/fa";
 
-function index({ url, saleEnds, name, distance, quantity, price, description, EventClick }: DetailsEventPanel) {
+function index({ url, saleEnds, name,location, distance, quantity, price, description, EventClick }: DetailsEventPanel) {
   return (
     <>
       <div className='bg-sky-800 rounded-xl w-[342px] flex flex-col items-center font-medium justify-center'>
         <div className='relative m-3'>
           <img src="/location.png" alt="" />
-          <div className='flex items-center justify-start gap-2 bg-sky-900/50 p-3 rounded-xl w-[80%] cursor-pointer absolute left-8 top-15 transition-all hover:top-14 hover:left-6 hover:w-[85%] hover:p-4'>
+          <div className='flex items-center justify-start gap-2 bg-sky-900/50 p-3 rounded-xl w-[90%] cursor-pointer absolute left-4 top-12 transition-all hover:top-12 hover:left-2 hover:w-[95%] hover:p-4 '>
             <div>
-              <img className='w-10 h-10 rounded-full' src={url} alt="" />
+              <img className='w-10 h-8 rounded-full' src={url} alt="" />
             </div>
             <div>
               <div className='text-white text-sm'>
                 {name}
               </div>
-              <div className='self-start text-gray-400 text-xs'>
-                {distance}
+              <div className='self-start flex items-center text-gray-400 text-[10px] line-clamp-1'>
+                {location}, {distance}
               </div>
             </div>
           </div>
@@ -68,17 +68,17 @@ function index({ url, saleEnds, name, distance, quantity, price, description, Ev
                   Ingressos à venda até {saleEnds.toLocaleDateString()}
                 </div>
               </div>
-              <div className='self-start text-sm w-full mt-2 text-gray-400'>
+              <div className='self-start text-[13px] w-full mt-2 text-gray-400'>
                 Você receberá uma confirmação no email
               </div>
             </div>
           </>
         }
         <div className='flex flex-col gap-4 border-b-[1px] p-3 border-gray-500'>
-          <div className='text-lg font-bold'>
+          <div className='text-xl font-bold'>
             Sobre o Evento
           </div>
-          <div className='text-sm text-gray-300'>
+          <div className='text-balance text-gray-300'>
             {description}
           </div>
         </div>
