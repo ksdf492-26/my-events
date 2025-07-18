@@ -3,21 +3,21 @@ import { Producer } from "@/types/Producer"
 import { useState } from "react"
 
 function index({ Producter }: Producer) {
-        const [indice,setIndice] = useState(0)
+    const [indice, setIndice] = useState(0)
 
-        const text = ['rápida','barata','segura']
-        setTimeout(() => {
-            setIndice(indice +1)
-      
+    const text = ['rápida', 'barata', 'segura']
+    setTimeout(() => {
+        setIndice(indice + 1)
 
-            if(indice >=2) {
-                setIndice(0)
-            }
-        }, 1950);
-        
+
+        if (indice >= 2) {
+            setIndice(0)
+        }
+    }, 1950);
+
     return (
         <>
-        
+
             {
                 Producter == 1 &&
                 <div className='w-full bg-sky-950 rounded-4xl flex items-center justify-between'>
@@ -39,25 +39,30 @@ function index({ Producter }: Producer) {
             }
             {
                 Producter == 2 &&
-                <div className="flex items-center h-80 justify-between bg-sky-950 mb-10 w-full">
-                    <div className="flex justify-center items-center  font-medium p-5">
-                        <div className="w-2/3 flex flex-col gap-1" >
-                            <div className="text-4xl">
-                                Para produtor de Eventos
+                <div className="bg-sky-950">
+                    <section className="container">
+                        <div className="flex items-center h-80  justify-between mb-10 w-full">
+                            <div className="flex justify-center items-center  font-medium p-5">
+                                <div className=" flex flex-col gap-1" >
+                                    <div className="text-4xl">
+                                        Para produtor de Eventos
+                                    </div>
+                                    <div className="text-lg text-gray-500 w-2/3 ">
+                                        Crie ou entre com a sua conta de produtor de eventos e veja só os benefícios de anunciar conosco!
+                                    </div>
+                                    <div className="p-3 self-start mt-2 cursor-pointer w-[200px] bg-[#001F3D] rounded-4xl text-center font-bold uppercase ">
+                                        Quero anunciar
+                                    </div>
+                                </div>
+
                             </div>
-                            <div className="text-lg text-gray-500 ">
-                                Crie ou entre com a sua conta de produtor de eventos e veja só os benefícios de anunciar conosco!
-                            </div>
-                            <div className="p-3 self-start mt-2 cursor-pointer w-[200px] bg-[#001F3D] rounded-4xl text-center font-bold uppercase ">
-                                Quero anunciar
+                            <div className="flex-1 flex justify-end items-center h-full w-full">
+                                <img className=" h-full" src="./BeComeProducer.png" alt="" />
                             </div>
                         </div>
-
-                    </div>
-                    <div className="flex-1 flex justify-end items-center h-full w-full">
-                        <img className=" h-full" src="./BeComeProducer.png" alt="" />
-                    </div>
+                    </section>
                 </div>
+
             }
             {
                 Producter == 3 &&

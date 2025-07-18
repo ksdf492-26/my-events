@@ -44,7 +44,7 @@ function index() {
                         </div>
 
                     </div>
-                    <div className='w-full bg-sky-950 rounded-4xl flex items-center justify-around'>
+                    <div className='w-full bg-sky-950 rounded-xl flex items-center justify-around'>
 
                         <div>
                             <div className='font-bold text-2xl'>

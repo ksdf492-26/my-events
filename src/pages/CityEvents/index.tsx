@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from 'react'
 import Card from '@/components/CardCity'
 import City from '@/data/City'
-
 function Index() {
   const scrollRef1 = useRef<HTMLDivElement>(null)
   const scrollRef2 = useRef<HTMLDivElement>(null)
@@ -44,7 +43,7 @@ function Index() {
 
           <div
             ref={scrollRef1}
-            className="flex gap-3 items-center overflow-x-auto h-[500px] w-full py-4 px-4"
+            className="flex gap-3 items-center overflow-x-auto h-[650px] w-full py-4 px-4"
           >
             {
               cityList.map((city, index) => (
@@ -65,7 +64,7 @@ function Index() {
           </div>
           <div
             ref={scrollRef2}
-            className="flex items-center gap-3 overflow-x-auto h-[500px] w-full py-4 px-4"
+            className="flex items-center gap-3 overflow-x-auto h-[650px] w-full py-4 px-4"
           >
             {
               cityList.map((city,index) => (

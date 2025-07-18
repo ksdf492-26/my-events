@@ -16,7 +16,6 @@ function CardCity({ name, url, index }: Props) {
         ${isDestaque ? 'min-w-[350px] h-[500px] ml-10 mr-10' : 'min-w-[250px] h-[400px]'}
       `}
     >
-      {/* Texto da cidade */}
       <div
         className={`
           w-full h-full absolute left-0 z-10 text-white  font-medium capitalize drop-shadow-md
