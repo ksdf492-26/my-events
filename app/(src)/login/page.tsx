@@ -32,7 +32,7 @@ function Index() {
                 <div className='w-full flex flex-col items-center gap-10'>
                     <Input name='usuario' type='text' placeholder='Digite seu usuario' />
                     <Input name='email' type='email' placeholder='Digite seu email' />
-                    <Input name='usuario' type='password' placeholder='Digite sua senha' />
+                    <Input name='password' type='password' placeholder='Digite sua senha' />
                 </div>
 
                 <div className='flex items-center text-white w-[400px] justify-between gap-15'>
