@@ -17,7 +17,7 @@ function index({cards}:Cards) {
                 </div>
             </div>
             <div className="p-2 rounded-xl w-32 text-center text-white cursor-pointer shadow-xs bg-[#05182B] font-bold absolute top-51  transition-all hover:w-36 hover:shadow-blue-300">
-                <Link className="text-white !no-underline" href={`event/${card.id}`}>
+                <Link className="text-white !no-underline" href={`/event/${card.id}`}>
                 ver evento
                 </Link>
             </div>

@@ -12,7 +12,7 @@ function index({ url, saleEnds, name,location, distance, quantity, price, descri
               <img className='w-10 h-8 rounded-full' src={url} alt="" />
             </div>
             <div>
-              <div className='text-white text-sm'>
+              <div className='text-white text-sm line-clamp-1' title={name}>
                 {name}
               </div>
               <div className='self-start flex items-center text-gray-400 text-[10px] line-clamp-1'>
