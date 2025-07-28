@@ -16,11 +16,11 @@ function index() {
                         <div className='flex items-center justify-between w-full'>
                             {
                                 Category.map(category => (
-                                    <div key={category.name} className=" w-32 -pointer relative h-[150px] flex flex-col justify-end items-center">
+                                    <div key={category.name} className=" w-32 cursor-pointer relative h-[150px] flex flex-col justify-end items-center transition-all">
                                         <div className="bg-[#045174] rounded-full absolute top-0 w-[110px] h-[110px] flex items-center justify-center transition-all hover:w-[120px] hover:h-[120px]">
                                             <img className='w-[80px] h-[80px]' src={category.url} alt="" />
                                         </div>
-                                        <div title={category.name} className="cursor-default text-lg text-center  line-clamp-1  font-medium">
+                                        <div title={category.name} className="cursor-default text-lg text-center font-medium line-clamp-1">
                                             {category.name}
                                         </div>
                                     </div>

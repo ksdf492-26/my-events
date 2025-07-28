@@ -29,7 +29,7 @@ function index() {
                     </div>
                     {
                         isEventPage && (
-                            <div className='flex flex-col items-center justify-between relative'>
+                            <div className='flex flex-col items-center justify-between relative z-10'>
                                 <div className='flex items-center gap-2'>
                                     <div className='bg-sky-800 border-2 h-11 p-2 w-[570px] border-white rounded-lg'>
                                         <input value={search} onChange={(e) => setSearch(e.target.value)} type="text" className='w-full h-full outline-none' placeholder='Buscar eventos' />

@@ -1,20 +1,24 @@
 'use client'
 import { Producer } from "@/types/Producer"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function index({ Producter }: Producer) {
-    const [indice, setIndice] = useState(0)
+ const text = ['rápida', 'barata', 'segura'];
+  const [indice, setIndice] = useState(0);
+  const [animar, setAnimar] = useState(false);
 
-    const text = ['rápida', 'barata', 'segura']
-    setTimeout(() => {
-        setIndice(indice + 1)
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      setAnimar(true); 
 
-
-        if (indice >= 2) {
-            setIndice(0)
-        }
+      setTimeout(() => {
+        setIndice((prev) => (prev + 1) % text.length); 
+        setAnimar(false); 
+      }, 500); 
     }, 1950);
 
+    return () => clearInterval(intervalo);
+  }, []);
     return (
         <>
 
@@ -66,34 +70,37 @@ function index({ Producter }: Producer) {
             }
             {
                 Producter == 3 &&
-                <section className="container">
-                    <div className="flex items-center m-20 bg-sky-950 justify-between rounded-[47px]">
-                        <div>
-                            <div className="flex flex-col p-10">
-                                <div className="font-bold text-4xl line-clamp-4 w-[250px] mb-1 relative">
-                                    Promova eventos
-                                    de forma
-                                    <span className={` ml-2 text-[#001020] bg-sky-950  absolute transition-all animate-descer`}>
-                                        {text[indice]}
-                                    </span>
-                                    <br />
-                                    Na HepHere
-                                </div>
-                                <div
-                                    className="font-medium text-xl w-[500px] text-gray-500
-             line-clamp-2 overflow-hidden mb-10">
-                                    Crie ou entre com a sua conta de produtor de eventos e veja só os benefícios de anunciar conosco!
-                                </div>
-                                <div className="bg-[#045174] cursor-pointer p-2 w-48 text-center font-medium uppercase rounded-lg">
-                                    Quero anunciar
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="./productor-02.png" alt="" />
-                        </div>
-                    </div>
-                </section>
+  <section className="container">
+      <div className="flex items-center m-20 bg-sky-950 justify-between rounded-[47px]">
+        <div>
+          <div className="flex flex-col p-10">
+            <div className="font-bold text-4xl line-clamp-3 w-[400px] mb-1 relative h-[130px]">
+              Promova eventos
+              de forma
+              <span
+                className={`ml-2 text-[#001020] bg-sky-950 absolute transition-all duration-500 ease-in-out
+                  ${animar ? 'translate-y-6 opacity-0' : 'translate-y-0 opacity-100'}`}
+              >
+                {text[indice]}
+              </span>
+              <br />
+              Na HepHere
+            </div>
+
+            <div className="font-medium text-xl w-[500px] text-gray-500 line-clamp-2 overflow-hidden mb-10">
+              Crie ou entre com a sua conta de produtor de eventos e veja só os benefícios de anunciar conosco!
+            </div>
+
+            <div className="bg-[#045174] cursor-pointer p-2 w-48 text-center font-medium uppercase rounded-lg">
+              Quero anunciar
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="./productor-02.png" alt="" />
+        </div>
+      </div>
+    </section>
             }
         </>
     )

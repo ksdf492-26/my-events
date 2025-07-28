@@ -8,5 +8,6 @@ export type Card = {
     price:number
     description:string
     saleEnds: Date
-
+    city:string
+    category:string
 }
