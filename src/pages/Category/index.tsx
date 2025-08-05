@@ -4,6 +4,7 @@ import Cards from '@/data/Cards'
 import Card from '@/components/ListerCards'
 import CardsRotating from '@/components/CardsRotating'
 import BeComeProducer from '@/pages/BeComeProducer'
+import Link from 'next/link'
 function index() {
     return (
         <div className='bg-[#001F3D] w-screen'>
@@ -16,7 +17,8 @@ function index() {
                         <div className='flex items-center justify-between w-full'>
                             {
                                 Category.map(category => (
-                                    <div key={category.name} className=" w-32 cursor-pointer relative h-[150px] flex flex-col justify-end items-center transition-all">
+                                   <Link key={category.name} className='text-white !no-underline' href={`/events?category=${encodeURIComponent(category.name)}`}>
+                                     <div  className=" w-32 cursor-pointer relative h-[150px] flex flex-col justify-end items-center transition-all">
                                         <div className="bg-[#045174] rounded-full absolute top-0 w-[110px] h-[110px] flex items-center justify-center transition-all hover:w-[120px] hover:h-[120px]">
                                             <img className='w-[80px] h-[80px]' src={category.url} alt="" />
                                         </div>
@@ -24,6 +26,7 @@ function index() {
                                             {category.name}
                                         </div>
                                     </div>
+                                   </Link>
                                 ))
                             }
 

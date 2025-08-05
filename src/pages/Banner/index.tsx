@@ -16,7 +16,7 @@ function Index() {
     const router = useRouter();
     function SearchEvent() {
         if (!search.trim()) return;
-        router.push(`/events/${encodeURIComponent(search)}`);
+        router.push(`/events?name=${encodeURIComponent(search)}`);
     }
 
     return (

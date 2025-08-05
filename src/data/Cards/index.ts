@@ -11,7 +11,7 @@ const data: Card[] = [
     price: 0,
     description: "Celebre a criatividade local com apresentações, artesanato e arte vibrante sob o céu de verão. Uma reunião alegre de almas artísticas.",
     saleEnds: new Date("2025-08-10T14:30:00"),
-    category: "passeios e tours",
+    category: "Carnaval",
     city: "Aurora do Sul"
   },
   {

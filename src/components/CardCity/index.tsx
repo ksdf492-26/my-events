@@ -1,13 +1,17 @@
 'use client'
 import { City } from "@/types/City";
+import { useRouter } from "next/navigation";
 
 type Props = City & {
   index?: number;
 };
 
 function CardCity({ name, url, index }: Props) {
+  const router = useRouter()
   const isDestaque = index === 2;
-
+  const cityFilter = (city:string) => {
+      router.push(`/events?city=${encodeURIComponent(city)}`);
+  }
   return (
     <div
       className={`
@@ -15,7 +19,8 @@ function CardCity({ name, url, index }: Props) {
         rounded-xl border-[1px] border-blue-500 cursor-pointer
         ${isDestaque ? 'min-w-[350px] h-[500px] ml-10 mr-10' : 'min-w-[250px] h-[400px]'}
       `}
-    >
+      onClick={() => isDestaque?cityFilter(name) : undefined}
+    > 
       <div
         className={`
           w-full h-full absolute left-0 z-10 text-white  font-medium capitalize drop-shadow-md
