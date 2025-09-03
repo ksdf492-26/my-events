@@ -7,20 +7,18 @@ import Card from '@/components/CardsEvents';
 import { ReadonlyURLSearchParams } from 'next/navigation';
 
 export default function EventClient() {
-  const params = useParams();
   const searchParams = useSearchParams() as ReadonlyURLSearchParams;
   const router = useRouter();
-
-  const [searchItem, setSearchItem] = useState('');
+   const [searchItem, setSearchItem] = useState('');
   const [debouncedSearch, setDebouncedSearch] = useState('');
 
   // extrai params
   const categoryParameters = searchParams.get('category') ?? '';
   const cityParameters = searchParams.get('city') ?? '';
   const nameParameters = searchParams.get('name') ?? '';
-  const removeFilter = () => {
-    router.push('/events')
-  }
+  
+  
+
   // opcional: inicializa searchItem com name da rota (ex: /events/[name])
   useEffect(() => {
     if (nameParameters) {
@@ -28,13 +26,13 @@ export default function EventClient() {
     }
   }, [nameParameters]);
 
-  // debounce simples
+
   useEffect(() => {
     const handle = setTimeout(() => setDebouncedSearch(searchItem.toLowerCase()), 250);
     return () => clearTimeout(handle);
   }, [searchItem]);
 
-  // monta base de cards: city + category (interseção) ou só um deles ou todos
+
   const baseCards = useMemo(() => {
     let filtered = Cards;
 
@@ -68,6 +66,10 @@ export default function EventClient() {
   return (
     <section className="container">
       <div className="flex flex-col items-center justify-center p-5 gap-3">
+  <div className='w-full relative flex items-center justify-center'>
+            <div className='absolute left-0 cursor-pointer w-fit rounded-full shadow-2xs shadow-sky-500'>
+          <img src="/arrowLeft.png" alt="" onClick={()=> router.back()}/>
+        </div>
         <div className="flex items-center justify-between gap-2 bg-sky-950 rounded-lg w-[570px] shadow-gray-900 shadow-xs">
           <div className="h-12 p-3 w-[500px] rounded-lg flex items-center">
             <input
@@ -79,22 +81,29 @@ export default function EventClient() {
             />
           </div>
         </div>
+  </div>
 
         <div className="w-full flex flex-col relative items-center justify-center">
           <div className="text-white   self-start w-full flex flex-col  gap-3 items-start p-5 text-3xl">
+           
+    
+              
             {
-              cityParameters || categoryParameters &&
-              <div onClick={removeFilter} className='w-fit rounded-4xl  cursor-pointer text-lg bg-sky-950 p-2'>
-                {
-                  categoryParameters &&
-                  categoryParameters
-                }
-                {
-                  cityParameters &&
-                  cityParameters
-                }
-              </div>
+              (categoryParameters || cityParameters) && 
+                    <div onClick={() => router.push('/events') } className='w-fit font-semibold shadow-2xs shadow-blue-300 rounded-4xl  cursor-pointer text-lg bg-sky-950 p-2 hover:bg-sky-900 transition-all'>
+                    {
+                      cityParameters && 
+                      cityParameters
+                    }
+                    {
+                      categoryParameters &&
+                      categoryParameters
+                    }
+                  </div>
             }
+
+            
+          
             {
               searchItem.trim() != "" &&
               <div className='font-bold text-2xl'>
@@ -104,7 +113,12 @@ export default function EventClient() {
 
           </div>
           <div className="grid grid-cols-4 gap-5 overflow-y-scroll h-[500px] w-full">
-            {events.length > 0 && <Card cards={events} />}
+            {events.length > 0 && 
+            events.map(({id,name,distance,url})=> (
+                <Card key={id} data={{id:id,name:name,distance:distance,url:url}}/>
+            ))
+            
+            }
           </div>
           <div className="absolute top-25 w-[500px]">
             {events.length === 0 && (

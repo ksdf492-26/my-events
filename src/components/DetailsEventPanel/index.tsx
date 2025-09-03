@@ -1,7 +1,10 @@
 import { DetailsEventPanel } from "@/types/DetailsEventPanel";
+import Link from "next/link";
 import { FaMobileAlt, FaShoppingCart } from "react-icons/fa";
-
+import { useParams } from "next/navigation";
 function index({ url, saleEnds, name,location, distance, quantity, price, description, EventClick }: DetailsEventPanel) {
+  const params = useParams()
+  const {id} = params as {id:string}
   return (
     <>
       <div className='bg-sky-800 rounded-xl w-[342px] flex flex-col items-center font-medium justify-center'>
@@ -137,9 +140,9 @@ function index({ url, saleEnds, name,location, distance, quantity, price, descri
           price > 0 && 
           <>
           <div className="mb-5  border-t-[1px] border-gray-500 w-full flex items-center justify-center">
-          <div className="bg-sky-950 font-bold cursor-pointer mt-5 text-lg p-3 rounded-lg w-40 text-center transition-all shadow-xs hover:w-44 hover:shadow-blue-300">
+            <Link href={`?payment=processing&id=${id}&quantity=${quantity}&price=${price}`} className="bg-sky-950 font-bold cursor-pointer mt-5 text-lg p-3 rounded-lg w-40 text-center text-white !no-underline transition-all shadow-xs hover:w-44 hover:shadow-blue-300">
             Comprar
-          </div>
+            </Link>
         </div>
           </> 
         }

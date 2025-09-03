@@ -1,32 +1,43 @@
 'use client';
 
-import { useParams } from 'next/navigation';
+import { useSearchParams,ReadonlyURLSearchParams, useParams,useRouter } from 'next/navigation';
 import Cards from '@/data/Cards'
 import DetailsEventPanel from '@/components/DetailsEventPanel'
 
 import { useState } from 'react';
 import { FaMapMarker } from 'react-icons/fa';
 import Link from 'next/link';
+import { PaymentsCard } from '@/components/PaymentsCard';
 export default function ProdutoPage() {
-  const params = useParams();
 
+  const searchParams = useSearchParams() as ReadonlyURLSearchParams;
+ const payment = searchParams.get("payment") ?? "";
+
+  const params = useParams();
+  const router = useRouter()
   const {id} = params as {id: string}
   const events = Cards.filter(event => event.id == Number(id))
   const [value, setValue] = useState(0)
 
   return (
-    events.map(({ saleEnds, name, location, address, distance, id, price, description, url }) => (
-
-      <main key={id} className='flex flex-col gap-15'>
+    <>
+    {
+      payment && 
+      <PaymentsCard/>
+    }
+    {
+        events.map(({ saleEnds, name, location, address, distance, id, price, description, url }) => (
+          
+        <main key={id} className='flex flex-col gap-15'>
         <section className='container'>
           <div className='flex mt-10 gap-5 justify-between h-fit items-start '>
             <div className='flex flex-col justify-between h-full  gap-3'>
               <div className='w-[800px] relative rounded-xl h-[400px] mb-3'>
                 <img className='w-full  h-full rounded-xl' src={url} alt="" />
                 <div className='text-3xl transition-all p-2 w-12 flex items-center justify-center text-center rounded-tr-xl rounded-bl-xl cursor-pointer font-medium absolute top-0 right-0 text-gray-300 hover:bg-black/50' >
-                  <Link className='!no-underline !text-gray-300' href={`/`}>
+                  <div onClick={() => router.back()} className='!no-underline !text-gray-300'>
                   X
-                  </Link>
+                  </div>
                 </div>
               </div>
               <div className='flex items-center justify-between'>
@@ -222,6 +233,10 @@ export default function ProdutoPage() {
           </div>
         </section>
       </main>
-    ))
+      
+    ))  
+    }
+    </>
+
   );
 }

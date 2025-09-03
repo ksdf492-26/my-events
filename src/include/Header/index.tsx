@@ -45,8 +45,11 @@ function index() {
                                             <div className='text-white w-[570px] rounded-lg flex flex-col gap-2 bg-sky-950'>
 
                                                 {events.map(event => (
-                                                    <li onClick={() => setSearch('')} key={event.id} className='py-1  cursor-pointer rounded-lg transition-all h-11 p-2 hover:border-2 hover:border-white hover:bg-sky-800 flex items-center'>
-                                                        <Link className='!no-underline text-white' href={`/event/${event.id}`}>{event.name}</Link>
+                                                    <li onClick={() => setSearch('')} key={event.id} className='py-1  cursor-pointer rounded-lg transition-all h-11 p-2 hover:border-2 hover:border-white hover:bg-sky-800 flex items-center hover:font-bold'>
+                                                        <Link className='!no-underline flex items-center justify-center text-white' href={`/event/${event.id}`}>
+
+                                                            {event.name}
+                                                        </Link>
                                                     </li>
                                                 ))}
 

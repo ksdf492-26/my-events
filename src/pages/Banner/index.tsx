@@ -20,8 +20,9 @@ function Index() {
     }
 
     return (
-        <div className="bg-[url('/backgrounds/Img-02.png')] bg-cyan-950">
-            <section className="container">
+        <div className="bg-[url(/backgrounds/img-02.png)] bg-sky-900/30 bg-no-repeat bg-cover  h-[500px] relative">
+            <div className="absolute top-0 w-full">
+                <section className="container">
                 <div className="w-full flex items-center justify-between p-15">
                     <div className="flex flex-col gap-5">
                         <div className="text-3xl">Olá, faça seu login!</div>
@@ -45,10 +46,15 @@ function Index() {
                     </div>
 
                     <div className="flex items-center gap-5 w-[550px] h-[300px] overflow-hidden overflow-x-scroll">
-                        <Card cards={Data} />
+                        {
+                            Data.map(data => (
+                                <Card key={data.id} data={data} />
+                            ))
+                        }
                     </div>
                 </div>
             </section>
+            </div>
         </div>
     );
 }

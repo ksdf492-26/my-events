@@ -6,7 +6,7 @@ type Props = City & {
   index?: number;
 };
 
-function CardCity({ name, url, index }: Props) {
+function CardCity({ name, url, index }: Props) {                                              
   const router = useRouter()
   const isDestaque = index === 2;
   const cityFilter = (city:string) => {

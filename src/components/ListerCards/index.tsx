@@ -19,7 +19,7 @@ function Index({ title, Cards }: ListerCards) {
 
   return (
     <>
-      <div className='text-2xl self-center font-medium mb-5 flex items-center w-[90%]'>
+      <div className='text-2xl ml-16 self-center font-medium mb-5 flex items-center w-[90%]'>
         {title}
       </div>
       <div className="flex items-baseline gap-2 justify-center w-full">
@@ -31,7 +31,11 @@ function Index({ title, Cards }: ListerCards) {
           ref={scrollRef}
           className='flex overflow-x-auto scroll-smooth h-[350px] w-full gap-5 px-2'
         >
-          <Card cards={Cards}/>
+          {
+            Cards.map(cards => (
+              <Card key={cards.id} data={cards}/>
+            ))
+          }
         </div>
 
         <button onClick={() => scroll('right')}>

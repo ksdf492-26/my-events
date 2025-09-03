@@ -50,9 +50,8 @@ function Index() {
             </div>
             <form className="w-1/2 p-10 h-full flex flex-col items-center justify-between text-gray-400">
                 <div className="text-2xl font-bold text-black text-center">
-<div>Faça login de forma rápida e fácil e descubra</div>
-<div>os eventos mais incríveis da sua cidade!</div>
-
+                    <div>Crie uma conta gratuita e veja os eventos</div>
+                    <div>que estão bombando na sua cidade</div>
                 </div>
                 <div className='w-full flex flex-col items-center gap-10'>
                     <Input name='name' onChange={handleChange} value={formData.name} type='text' placeholder='Digite seu usuario' />
@@ -64,7 +63,7 @@ function Index() {
                     <Checkbox />
                     <Button OnClick={() => Login(formData)} text='Login' type='button' />
                 </div>
-                <div className='flex flex-col items-center justify-center opacity-0 pointer-events-none'>
+                <div className='flex flex-col items-center justify-center'>
                     <small className='text-gray-600'>
                         Já possui conta? Entre com
                     </small>

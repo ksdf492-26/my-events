@@ -1,12 +1,8 @@
 import { ReactElement } from "react"
+import { Cards } from "../Cards"
 
 export type ListerCards = {
     title: string
-    Cards: Array<{
-        id: number
-        name: string
-        url: string
-        distance: string
-    }>
+    Cards: Cards[]
     
 }
